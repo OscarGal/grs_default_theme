@@ -1,9 +1,10 @@
 {
     # Theme information
     'name': "Grs Default Theme",
-    'description': """
-    """,
-    'category': 'Theme',
+    'description': 'GRS THEME',
+    'category': 'Theme/Services',
+	'summary': 'Corporate, Business, Tech, Services',
+	'sequence': 120,
     'version': '1.0',
     'depends': ['website'],
 
@@ -26,4 +27,5 @@
     'images': [
         'static/poster.png',
     ],
+	'license': 'LGPL-3',
 }

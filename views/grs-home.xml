@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- === Services Page === -->
+    <record id="static_grs_home" model="website.page">
+        <field name="name">GRS Home</field>
+        <field name="website_published">True</field>
+        <field name="url">/grs-home</field>
+        <field name="type">qweb</field>
+        <field name="key">grs.static_grs_home</field>
+        <field name="arch" type="xml">
+            <t t-name="grs.static_grs_home_template">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <!-- ##### Welcome Area Start ##### -->
+                        <div class="container pt-5">
+                            <section class="welcome_area bg-img background-overlay" style="background-image: url(/grs_default_theme/static/src/img/bg-img/banner-main.jpg);"></section>
+                        </div>
+                        <!-- ##### Welcome Area End ##### -->
+
+                        <!-- ##### Detail Company Area Start ##### -->
+                        <div class="section-padding-80-0 clearfix">
+                            <div class="container">
+                                <div class="text-center">
+                                    <span class="d-block h1 text-primary">Electrodomésticos para todos</span>
+                                    <p class="lead pt-4 pb-4">
+                                  GRS te acompaña en todas las etapas de tu vida. Desde que decides
+                                  empezar tu propio camino. Cuando encuentras la persona perfecta para
+                                  compartir tu vida. Cuando tu familia crece. Desde que te atreves a
+                                  emprender un negocio propio. Cuando tu negocio florece y lo expandes
+                                  con éxito. Los electrodomésticos GRS te acompañan desde el primer
+                                  día que empiezas a creer.
+                                </p>
+                                </div>
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-primary text-uppercase">
+                                  Catálogo de productos
+                                </button>
+                                </div>
+                                <hr class="my-4" />
+                            </div>
+                        </div>
+                        <!-- ##### Detail Company Area End ##### -->
+
+                        <!-- ##### Media Area Start ##### -->
+                        <div class="section-padding-80-0 clearfix">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div style="width: 90% !important; margin: auto;">
+                                            <div class="embed-responsive embed-responsive-16by9">
+                                                <iframe width="1170" height="658" src="https://www.youtube.com/embed/BVptvL7AXkQ?feature=oembed" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-4" />
+                            </div>
+                        </div>
+                        <!-- ##### Media Area End ##### -->
+
+                        <!-- ##### Statistics Area Start ##### -->
+                        <div class="section-padding-80-0 clearfix">
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div style="color: #dd6868 !important;" class="text-center col-sm-12 col-md-4 mb-5">
+                                        <span class="display-4">+ DE 4,000</span>
+                                        <span class="d-block mt-3">PUNTOS DE VENTA</span>
+                                    </div>
+                                    <div style="color: #068244 !important;" class="text-center col-sm-12 col-md-4 mb-5">
+                                        <span class="display-4">+ DE 500</span>
+                                        <span class="d-block mt-3">MAYORISTAS</span>
+                                    </div>
+                                    <div style="color: #f1cf09 !important;" class="text-center col-sm-12 col-md-4 mb-5">
+                                        <span class="display-4">10</span>
+                                        <span class="d-block mt-3">CADENAS REGIONALES</span>
+                                    </div>
+                                </div>
+                                <hr class="my-4" />
+                            </div>
+                        </div>
+                        <!-- ##### Statistics Area End ##### -->
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+    <!-- Item Menu -->
+    <record id="static_grs_home_link" model="website.menu">
+        <field name="name">Quiénes somos</field>
+        <field name="page_id" ref="static_grs_home" />
+        <field name="parent_id" ref="website.main_menu" />
+        <field name="sequence" type="int">99</field>
+    </record>
+</odoo>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="core-style" inherit_id="website.assets_frontend" name="My Core Style">
+        <xpath expr="link[last()]" position="after">
+            <!-- <t t-call-assets="web.assets_common" t-js="false" /> -->
+            <!-- <t t-call-assets="web.assets_frontend" t-js="false" /> -->
+            <!-- <link rel="stylesheet" type="text/css" href="/grs_default_theme/static/src/css/bootstrap.min.css" /> -->
+            <!-- <link rel="stylesheet" type="text/css" href="/grs_default_theme/static/src/css/classy-nav.min.css" /> -->
+            <!-- <link rel="stylesheet" type="text/css" href="/grs_default_theme/static/src/css/owl.carousel.css" /> -->
+            <!-- <link rel="stylesheet" type="text/css" href="/grs_default_theme/static/src/css/animate.css" /> -->
+            <!-- <link rel="stylesheet" type="text/css" href="/grs_default_theme/static/src/css/magnific-popup.css" /> -->
+            <!-- <link rel="stylesheet" type="text/css" href="/grs_default_theme/static/src/css/jquery-ui.min.css" /> -->
+            <!-- <link rel="stylesheet" type="text/css" href="/grs_default_theme/static/src/css/nice-select.css" /> -->
+            <!-- <link rel="stylesheet" type="text/css" href="/grs_default_theme/static/src/css/font-awesome.min.css" /> -->
+            <link rel="stylesheet" type="text/css" href="/grs_default_theme/static/src/css/core-style.css" />
+            <link rel="stylesheet" type="text/css" href="/grs_default_theme/static/src/css/style.css" />
+        </xpath>
+    </template>
+    <template id="core-js" inherit_id="website.assets_frontend" name="My Core Js">
+        <xpath expr="script[last()]" position="after">
+            <script type="text/javascript" src="/grs_default_theme/static/src/js/popper.min.js"></script>
+            <!-- <script type="text/javascript" src="/grs_default_theme/static/src/js/bootstrap.min.js"></script> -->
+            <script type="text/javascript" src="/grs_default_theme/static/src/js/plugins.js"></script>
+            <script type="text/javascript" src="/grs_default_theme/static/src/js/classy-nav.min.js"></script>
+            <script type="text/javascript" src="/grs_default_theme/static/src/js/active.js"></script>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="custom_header_frontend" inherit_id="web.frontend_layout">
+        <!-- web.layout, web.frontend_layout -->
+        <xpath expr="//div[@id='wrapwrap']/header" position="replace">
+            <header class="header_area">
+                <div class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
+                    <!-- Classy Menu -->
+                    <nav class="classy-navbar" id="essenceNav">
+                        <a class="nav-brand" t-attf-href="/">
+                            <img t-if="website.logo" class="util-img-nav-brand" t-attf-src="data:image/*;base64,{{website.logo}}" t-att-alt="'Logo of %s' % website.logo" t-att-title="website.logo" />
+                            <img t-else="" class="util-img-nav-brand" t-att-src="'/logo.png?company=%s' % res_company.id" t-att-alt="'Logo of %s' % res_company.name" t-att-title="res_company.name" />
+                            <!-- Logo -->
+                        </a>
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </div>
+                        <!-- Menu -->
+                        <div class="classy-menu">
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap">
+                                    <span class="top"></span>
+                                    <span class="bottom"></span>
+                                </div>
+                            </div>
+                            <!-- Nav Start -->
+                            <div class="classynav text-uppercase" t-ignore="True">
+                                <ul>
+                                    <t t-foreach="website.menu_id.child_id" t-as="submenu">
+                                        <t t-call="website.submenu"></t>
+                                    </t>
+                                    <li t-ignore="True" t-if="not user_id._is_public()">
+                                        <a href="#">
+                                            <span t-esc="user_id.name[:23] + '...' if user_id.name and len(user_id.name) &gt; 25 else user_id.name" />
+                                        </a>
+                                        <ul class="dropdown">
+                                            <li>
+                                                <a id="o_logout" t-attf-href="/web/session/logout?redirect=/">Logout</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li t-ignore="True" t-else="">
+                                        <li>
+                                            <a t-attf-href="/web/login">Iniciar Sesion</a>
+                                        </li>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                    <!-- Header Meta Data -->
+                    <div class="header-meta d-flex clearfix justify-content-end">
+                        <!-- Search Area -->
+                        <div class="search-area">
+                            <form action="#" method="post">
+                                <input type="search" name="search" id="headerSearch" placeholder="Busca y crece" />
+                                <button type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </form>
+                        </div>
+                        <!-- Cart Area -->
+                    </div>
+                </div>
+            </header>
+        </xpath>
+
+        <xpath expr="//div[@id='wrapwrap']/main" position="before">
+            <!-- ##### Right Side Cart Area ##### -->
+            <div class="cart-bg-overlay"></div>
+            <!-- ##### Right Side Cart End ##### -->
+        </xpath>
+
+        <xpath expr="//div[@id='wrapwrap']/footer" position="replace">
+            <!-- ##### Brands Area Start ##### -->
+            <div class="util-brand section-padding-80-0 clearfix">
+                <div class="row justify-content-center">
+                    <div style="background: #f1a0ab !important;" class="util-brand-body col-sm-12 col-md-4">
+                        <img src="/grs_default_theme/static/src/img/core-img/Garantia3.png" alt="" />
+                        <h1>Garantia</h1>
+                        <p>La seguridad de una sólida inversión.</p>
+                    </div>
+                    <div style="background: #068244 !important;" class="util-brand-body col-sm-12 col-md-4">
+                        <img src="/grs_default_theme/static/src/img/core-img/Respaldo2.png" alt="" />
+                        <h1>Respaldo</h1>
+                        <p>El soporte de un equipo técnico especializado.</p>
+                    </div>
+                    <div style="background: #039fe2 !important;" class="util-brand-body col-sm-12 col-md-4">
+                        <img src="/grs_default_theme/static/src/img/core-img/Servicio2.png" alt="" />
+                        <h1>Servicio</h1>
+                        <p>La filosofía que nos guía. Nuestra razón de ser.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ##### Brands Area End ##### -->
+
+            <!-- ##### Footer Area Start ##### -->
+            <footer class="footer_area clearfix">
+                <div class="container">
+                    <div class="row">
+                        <!-- Single Widget Area -->
+                        <div class="col-12 col-md-12">
+                            <div class="single_widget_area d-flex justify-content-center mb-30">
+                                <!-- Logo -->
+                                <div class="footer-logo mr-15">
+                                    <a t-attf-href="/">
+                                        <img t-if="website.logo" class="util-img-footer" t-attf-src="data:image/*;base64,{{website.logo}}" t-att-alt="'Logo of %s' % website.name" t-att-title="website.name" />
+                                        <img t-else="" class="util-img-footer" t-att-src="'/logo.png?company=%s' % res_company.id" t-att-alt="'Logo of %s' % website.name" t-att-title="website.name" />
+                                    </a>
+                                </div>
+                                <!-- Footer Menu -->
+                                <div class="footer_menu">
+                                    <ul>
+                                        <t t-foreach="website.menu_id.child_id" t-as="submenu">
+                                            <t t-call="website.submenu">
+                                                <!-- <t t-set="item_class" t-value="'nav-item'"/> -->
+                                                <t t-set="link_class" t-value="'text-uppercase'" />
+                                            </t>
+                                        </t>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-end">
+                        <!-- Single Widget Area -->
+                        <div class="col-12 col-md-12 text-center">
+                            <div class="single_widget_area">
+                                <div class="footer_social_area">
+                                    <a t-if="website.social_facebook" t-att-href="website.social_facebook" data-toggle="tooltip" data-placement="top" target="_blank">
+                                        <i class="fa fa-facebook-square" />
+                                    </a>
+                                    <a t-if="website.social_twitter" t-att-href="website.social_twitter" data-toggle="tooltip" data-placement="top" target="_blank">
+                                        <i class="fa fa-twitter" />
+                                    </a>
+                                    <a t-if="website.social_linkedin" t-att-href="website.social_linkedin" data-toggle="tooltip" data-placement="top" target="_blank">
+                                        <i class="fa fa-linkedin" />
+                                    </a>
+                                    <a t-if="website.social_youtube" t-att-href="website.social_youtube" data-toggle="tooltip" data-placement="top" target="_blank">
+                                        <i class="fa fa-youtube-play" />
+                                    </a>
+                                    <a t-if="website.social_github" t-att-href="website.social_github" data-toggle="tooltip" data-placement="top" target="_blank">
+                                        <i class="fa fa-github" />
+                                    </a>
+                                    <a t-if="website.social_instagram" t-att-href="website.social_instagram" data-toggle="tooltip" data-placement="top" target="_blank">
+                                        <i class="fa fa-instagram" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="col-md-12 text-center">
+                            <p>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                <script>document.write(new Date().getFullYear());</script>
+                                |
+                                <t t-esc="website.name" />
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- ##### Footer Area End ##### -->
+        </xpath>
+    </template>
+</odoo>

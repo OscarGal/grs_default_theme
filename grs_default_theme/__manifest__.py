@@ -3,8 +3,8 @@
     'name': "Grs Default Theme",
     'description': 'GRS THEME',
     'category': 'Theme/Services',
-	'summary': 'Corporate, Business, Tech, Services',
-	'sequence': 120,
+    'summary': 'Corporate, Business, Tech, Services',
+    'sequence': 120,
     'version': '1.0',
     'depends': ['website'],
 
@@ -27,5 +27,8 @@
     'images': [
         'static/poster.png',
     ],
-	'license': 'LGPL-3',
+    'license': 'LGPL-3',
+    "application": False,
+    "installable": True,
+    "auto_install": False,
 }

@@ -28,7 +28,7 @@
         'static/poster.png',
     ],
     'license': 'LGPL-3',
-    "application": False,
+    "application": True,
     "installable": True,
     "auto_install": False,
 }

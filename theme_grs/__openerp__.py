@@ -1,30 +1,34 @@
-# -*- coding: utf-8 -*-
 {
-    'name': "Transparent Navbar",
-
-    'summary': """
-    Provide a sticky, transparent navbar for odoo""",
-
-    'description': """
-    This addon provides a transparent Navbar for Odoo.""",
-
-    'author': "Florian Fischer",
-    'website': "http://www.bloopark.de",
-
-    'category': 'Modal',
+    # Theme information
+    'name': "Grs Default Theme",
+    'description': 'GRS THEME',
+    'category': 'Theme/Services',
+    'summary': 'Corporate, Business, Tech, Services',
+    'sequence': 120,
     'version': '1.0',
+    'depends': ['website'],
 
-    'depends': [
-        'base',
-        'website'
-    ],
+    # templates
     'data': [
-        'views/navbar.xml'
+        'views/layout.xml',
+        'views/assets.xml',
+        'views/grs-home.xml',
+        # 'views/snippets.xml',
     ],
 
+    # demo pages
     'demo': [
+        'demo/pages.xml',
     ],
 
-    'tests': [
+    # Your information
+    'author': "GRS Electronics",
+    'website': "http://grselectrodomesticos.com",
+    'images': [
+        'static/poster.png',
     ],
+    'license': 'LGPL-3',
+    "application": True,
+    "installable": True,
+    "auto_install": False,
 }
